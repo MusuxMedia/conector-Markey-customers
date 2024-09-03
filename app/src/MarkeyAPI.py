@@ -2,11 +2,12 @@ import json
 import requests
 
 
+
 class MarkeyAPI:
-    def __init__(self):
-        self.url = "https://australQA.markey.com.ar/APIMarkeyV2/obtener"
-        self.token = 'UZN9291llgxWJ93uzilrmantG6t20r0v8kwrihYXmZl1EO8irdhT0gFK0tFAlv3m'
-        self.apikey = "933ec3bb-91c7-4ca5-bcdd-5220778c0f36"
+    def __init__(self, credenciales):
+        self.url = credenciales.MARKEY_URL
+        self.token = credenciales.MARKEY_TOKEN
+        self.apikey = credenciales.MARKEY_API_KEY
 
     def getResponse(self, dni):
         return requests.request("GET", self.url, headers=self.__getHeaders(), data=self.__getPayload(dni)).json()

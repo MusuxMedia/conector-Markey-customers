@@ -1,6 +1,3 @@
-from itertools import chain
-
-
 class DataValidator:
     def __init__(self, json_dict):
         self.data = json_dict["data"]
