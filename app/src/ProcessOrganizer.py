@@ -37,22 +37,6 @@ class ProcessOrganizer:
         return lista
 
     def build_dummy(self):
-        print([
-            {
-                "customerType": self.credenciales.NO_CUSTOMERTYPE,
-                "extraFields": [
-                    {
-                        "showable": [
-                            {
-                                "in": "workstation",
-                                "format": "both"
-                            }
-                        ],
-                        "NHC": "No Cliente"
-                    },
-                ]
-            }
-        ])
         return [
             {
                 "customerType": 799,
