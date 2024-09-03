@@ -1,6 +1,6 @@
 import json
 import requests
-
+from fastapi import status, HTTPException
 
 
 class MarkeyAPI:
@@ -10,7 +10,10 @@ class MarkeyAPI:
         self.apikey = credenciales.MARKEY_API_KEY
 
     def getResponse(self, dni):
-        return requests.request("GET", self.url, headers=self.__getHeaders(), data=self.__getPayload(dni)).json()
+        try:
+            return requests.request("GET", self.url, headers=self.__getHeaders(), data=self.__getPayload(dni)).json()
+        except requests.exceptions.RequestException:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token o APIKey de Markey incorrecta")
 
     def __getHeaders(self):
         return {
