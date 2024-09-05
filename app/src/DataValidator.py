@@ -1,6 +1,12 @@
+from fastapi import HTTPException, status
+
+
 class DataValidator:
     def __init__(self, json_dict):
-        self.data = json_dict["data"]
+        try:
+            self.data = json_dict["data"]
+        except KeyError:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def isValid(self):
         return len(self.data) > 0

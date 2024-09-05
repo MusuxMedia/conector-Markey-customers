@@ -8,9 +8,9 @@ class ProcessOrganizer:
         self.dni = dni
         self.credenciales = credenciales
 
-
     def validate_data(self):
-        validator: DataValidator = DataValidator(MarkeyAPI(self.credenciales).getResponse(self.dni))
+        markey_response = MarkeyAPI(self.credenciales).getResponse(self.dni)
+        validator: DataValidator = DataValidator(markey_response)
         if validator.isValid():
             return self.build_paciente(validator)
         else:
@@ -31,12 +31,14 @@ class ProcessOrganizer:
                          codigoAfiliado=validator.getCodAfiliado(paciente),
                          customerType=self.credenciales.CUSTOMERTYPE)
             lista.append(p.toJson())
-        print(lista)
         return lista
 
     def build_dummy(self):
         return [
             {
+                "firstName": "N/P",
+                "lastName": "N/P",
+                "dni": self.dni,
                 "customerType": 799,
                 "extraFields": [
                     {
@@ -46,7 +48,7 @@ class ProcessOrganizer:
                                 "format": "both"
                             }
                         ],
-                        "NHC": "No Cliente"
+                        "NHC": "N/A"
                     }
                 ]
             }

@@ -24,7 +24,7 @@ class Paciente(dict):
             "lastName": self.apellido,
             "dni": self.dni,
             "email": self.email,
-            "selectionName": self.fechaNacimiento,
+            "selectionName": self.fechaNacimiento[:10],
             "phone": self.phone,
             "customerType": self.customerType,
             "extraFields": [
@@ -75,3 +75,4 @@ class Paciente(dict):
                 }
             ]
         }
+
