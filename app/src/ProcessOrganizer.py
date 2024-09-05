@@ -4,14 +4,13 @@ from . import Paciente
 
 
 class ProcessOrganizer:
-    def __init__(self, dni: str):
+    def __init__(self, dni: str, credenciales):
         self.dni = dni
+        self.credenciales = credenciales
 
-    # Consultar datos
-    # Validar si es paciente
-    # Enviar datos de los pacientes         # Sino enviar NHC con "No Cliente" y el customerType de no cliente
+
     def validate_data(self):
-        validator: DataValidator = DataValidator(MarkeyAPI().getResponse(self.dni))
+        validator: DataValidator = DataValidator(MarkeyAPI(self.credenciales).getResponse(self.dni))
         if validator.isValid():
             return self.build_paciente(validator)
         else:
@@ -29,28 +28,13 @@ class ProcessOrganizer:
                          tipoDocumento=validator.getTipoDocumento(paciente),
                          cobertura=validator.getCobertura(paciente),
                          planContratado=validator.getPlanContratado(paciente),
-                         codigoAfiliado=validator.getCodAfiliado(paciente))
+                         codigoAfiliado=validator.getCodAfiliado(paciente),
+                         customerType=self.credenciales.CUSTOMERTYPE)
             lista.append(p.toJson())
         print(lista)
         return lista
 
     def build_dummy(self):
-        print([
-            {
-                "customerType": 799,
-                "extraFields": [
-                    {
-                        "showable": [
-                            {
-                                "in": "workstation",
-                                "format": "both"
-                            }
-                        ],
-                        "NHC": "No Cliente"
-                    },
-                ]
-            }
-        ])
         return [
             {
                 "customerType": 799,

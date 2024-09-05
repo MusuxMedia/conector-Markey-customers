@@ -1,11 +1,6 @@
-import json
-
-from . import DataValidator
-
-
 class Paciente(dict):
     def __init__(self, nombre, apellido, fechaNacimiento, email, phone, dni, historiaClinica, tipoDocumento, cobertura,
-                 planContratado, codigoAfiliado):
+                 planContratado, codigoAfiliado, customerType):
         dict.__init__(self)
         self.nombre = nombre
         self.apellido = apellido
@@ -18,6 +13,7 @@ class Paciente(dict):
         self.cobertura = cobertura
         self.planContratado = planContratado
         self.codigoAfiliado = codigoAfiliado
+        self.customerType = customerType
 
     def __repr__(self):
         return self.toJson()
@@ -30,7 +26,7 @@ class Paciente(dict):
             "email": self.email,
             "selectionName": self.fechaNacimiento,
             "phone": self.phone,
-            "customerType" : 829, #harcodeado, hay que pasarlo a variable
+            "customerType": self.customerType,
             "extraFields": [
                 {
                     "showable": [
@@ -79,8 +75,3 @@ class Paciente(dict):
                 }
             ]
         }
-
-
-# print(Paciente("<NAME>", "<NAME>", "12/4/5678", "12/4/5678", "12/4, 5678", "12/4, 5678", "12/4, 5678", "12/4", "OSDE",
-#                "12/4/5678", "12"))
-
