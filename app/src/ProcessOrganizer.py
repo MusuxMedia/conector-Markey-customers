@@ -8,9 +8,7 @@ class ProcessOrganizer:
         self.dni = dni
         self.credenciales = credenciales
 
-    # Consultar datos
-    # Validar si es paciente
-    # Enviar datos de los pacientes         # Sino enviar NHC con "No Cliente" y el customerType de no cliente
+
     def validate_data(self):
         validator: DataValidator = DataValidator(MarkeyAPI(self.credenciales).getResponse(self.dni))
         if validator.isValid():
