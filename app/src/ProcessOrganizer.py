@@ -42,12 +42,6 @@ class ProcessOrganizer:
                 "customerType": 799,
                 "extraFields": [
                     {
-                        "showable": [
-                            {
-                                "in": "workstation",
-                                "format": "both"
-                            }
-                        ],
                         "NHC": "N/A"
                     }
                 ]
