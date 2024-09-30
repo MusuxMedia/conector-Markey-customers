@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 tiangolo/uvicorn-gunicorn-fastapi:python3.12
+FROM --platform=linux/amd64 tiangolo/uvicorn-gunicorn-fastapi:python:3.12
 
 WORKDIR /code
 
