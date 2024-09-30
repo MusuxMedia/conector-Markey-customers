@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 from .main import app, get_settings
-from .src import Settings
+from .conector import Settings
 
 client = TestClient(app)
 
