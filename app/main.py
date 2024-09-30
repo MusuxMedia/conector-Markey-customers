@@ -2,7 +2,7 @@ from typing import Annotated
 
 import status
 
-from .src import *
+from .conector import *
 from .fakeentry import *
 from fastapi import FastAPI, Depends, status
 
