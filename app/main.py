@@ -1,6 +1,5 @@
 from typing import Annotated
 
-import status
 
 from .conector import *
 from .fakeentry import *
