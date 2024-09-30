@@ -23,7 +23,7 @@ class MarkeyAPI:
 
     def __getPayload(self, dni):
         return json.dumps({
-            "aplicacion": "HUAHIS",
+            "aplicacion": "MusuxMedia",
             "operacion": "apiObtenerPaciente",
             "apiKey": self.apikey,
             "filtro": {

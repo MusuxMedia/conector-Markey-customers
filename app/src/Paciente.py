@@ -24,53 +24,23 @@ class Paciente(dict):
             "lastName": self.apellido,
             "dni": self.dni,
             "email": self.email,
-            "selectionName": self.fechaNacimiento,
+            "selectionName": self.fechaNacimiento[:10],
             "phone": self.phone,
             "customerType": self.customerType,
             "extraFields": [
                 {
-                    "showable": [
-                        {
-                            "in": "workstation",
-                            "format": "both"
-                        }
-                    ],
                     "NHC": self.historiaClinica
                 },
                 {
-                    "showable": [
-                        {
-                            "in": "workstation",
-                            "format": "both"
-                        }
-                    ],
                     "tdocDescripcion": self.tipoDocumento
                 },
                 {
-                    "showable": [
-                        {
-                            "in": "workstation",
-                            "format": "both"
-                        }
-                    ],
                     "cobeDescripcion": self.cobertura
                 },
                 {
-                    "showable": [
-                        {
-                            "in": "workstation",
-                            "format": "both"
-                        }
-                    ],
                     "planDescripcion": self.planContratado
                 },
                 {
-                    "showable": [
-                        {
-                            "in": "workstation",
-                            "format": "both"
-                        }
-                    ],
                     "pacoAfiliado": self.codigoAfiliado
                 }
             ]
