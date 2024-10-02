@@ -13,7 +13,10 @@ class Debmedia:
             'x-api-key': token,
             'Content-Type': 'application/json'
         }
-        response = requests.request("POST", url, headers=headers, data=payload)
+        try:
+            response = requests.request("POST", url, headers=headers, data=payload)
+        except requests.RequestException:
+            raise HTTPException(status_code=404, detail="Server Incorrecto")
         self.validar_response(response)
 
     def __get_payload(self, screen_ids: list[int], turno: str, puesto: str, paciente: str):

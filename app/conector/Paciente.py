@@ -26,7 +26,9 @@ class Paciente(dict):
             "email": self.email,
             "selectionName": self.fechaNacimiento[:10],
             "phone": self.phone,
-            "customerType": self.customerType,
+            "customerType": {
+                "id": self.customerType
+            },
             "extraFields": [
                 {
                     "NHC": self.historiaClinica
