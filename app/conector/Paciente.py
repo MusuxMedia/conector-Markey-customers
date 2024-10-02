@@ -27,7 +27,7 @@ class Paciente(dict):
             "selectionName": self.fechaNacimiento[:10],
             "phone": self.phone,
             "customerType": {
-                "id": self.customerType
+                "id": str(self.customerType)
             },
             "extraFields": [
                 {
