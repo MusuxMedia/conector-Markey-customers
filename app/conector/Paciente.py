@@ -29,21 +29,8 @@ class Paciente(dict):
             "customerType": {
                 "id": str(self.customerType)
             },
-            "extraFields": [
+            "extraFields":
                 {
                     "NHC": self.historiaClinica
-                },
-                {
-                    "tdocDescripcion": self.tipoDocumento
-                },
-                {
-                    "cobeDescripcion": self.cobertura
-                },
-                {
-                    "planDescripcion": self.planContratado
-                },
-                {
-                    "pacoAfiliado": self.codigoAfiliado
                 }
-            ]
         }

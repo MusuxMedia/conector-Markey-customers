@@ -1,6 +1,7 @@
 from . import MarkeyAPI
 from . import DataValidator
 from . import Paciente
+from .config import Settings
 
 
 class ProcessOrganizer:
@@ -39,11 +40,12 @@ class ProcessOrganizer:
                 "firstName": "N/P",
                 "lastName": "N/P",
                 "dni": self.dni,
-                "customerType": 799,
-                "extraFields": [
+                "customerType": {
+                    "id": str(Settings.NO_CUSTOMERTYPE)
+                },
+                "extraFields":
                     {
                         "NHC": "N/A"
                     }
-                ]
             }
         ]
