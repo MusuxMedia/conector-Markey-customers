@@ -41,7 +41,7 @@ class ProcessOrganizer:
                 "lastName": "N/P",
                 "dni": self.dni,
                 "customerType": {
-                    "id": str(Settings.NO_CUSTOMERTYPE)
+                    "id": "799"
                 },
                 "extraFields":
                     {
