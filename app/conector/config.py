@@ -6,4 +6,3 @@ class Settings(BaseSettings):
     MARKEY_TOKEN: str = 'UZN9291llgxWJ93uzilrmantG6t20r0v8kwrihYXmZl1EO8irdhT0g54ddaq224jiii8'
     MARKEY_API_KEY: str = "c9fb5c39-d119-49af-8c2a-00cf71208d0a"
     CUSTOMERTYPE: str = "829"
-    NO_CUSTOMERTYPE: str = "799"
