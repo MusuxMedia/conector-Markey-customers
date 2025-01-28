@@ -26,3 +26,8 @@ A su vez devuelve si el Json es valido o no.
 Esta clase es la responsable de tener la estructura con la cual conectarse a la API de Markey, acá se utilizan las variables definidas en config.py.
 
 en __getHeaders se definen los header que se hacen en la consulta y en __getPayload el body que se envia.
+
+### Paciente.py
+En esta clase, en el método **toJson** se define el formato que tiene que tener el paciente para que pueda ser consumido por Debmedia.
+
+### ProcessOrganizer.py
