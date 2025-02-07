@@ -31,3 +31,19 @@ en __getHeaders se definen los header que se hacen en la consulta y en __getPayl
 En esta clase, en el método **toJson** se define el formato que tiene que tener el paciente para que pueda ser consumido por Debmedia.
 
 ### ProcessOrganizer.py
+Objeto que me sirve para organizar todo el proceso de llamado de la API, es un "pseudo-service"
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Llamador Fake Entry
+
+Este desarrollo es más sencillo, simplemente es el endpoint de **Fake entry** de la docu de Numia, pero modificado para funcionar con GET y poder pasarle los párametros por query, que era lo que nos habían pedido desde Markey.
+
+### ¿Que parametros puede recibir?
++ consultorio (string)
++ token (string) (este es el token de la instancia que se pide a Numia)
++ pantallas (list[int])
++ turno (string) (se puede pasar el numero del turno o también nombre y apellido o cualquier cosa que se quiera mostrar por pantalla en esa columna)
++ server (string) (opcional)
+Este último parametro es para **SOLO PARA TESTING EN OTRA INSTANCIA** si quiero testear si el endpoint funciona en **server** pongo `debq2` y en **token** pongo el token de la instancia de prueba de musux, de esta forma puedo probarlo en alguna de las pantallas de nuestra instancia que esten habilitadas para mostrar Fake Entry. 
